@@ -1,0 +1,302 @@
+:root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --gray: #95a5a6;
+    --white: #ffffff;
+    --black: #000000;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Main container that wraps everything */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Update the container styles */
+  .portfolio-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden; /* Changed from overflow-x to overflow */
+  }
+  
+  main {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Section styles */
+  .section {
+    width: 100%;
+    padding: 5rem 1rem; /* Adjusted padding */
+    box-sizing: border-box;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary);
+    position: relative;
+    padding-bottom: 0.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background-color: var(--light);
+    width: 100%;
+  }
+  
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 0 1rem; /* Added padding */
+    box-sizing: border-box;
+  }
+  
+  .hero-text {
+    flex: 1;
+    min-width: 0; /* Prevents flex item overflow */
+  }
+  
+  .hero-text h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+    margin-bottom: 1rem;
+    color: var(--secondary);
+  }
+  
+  .hero-text h2 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive font size */
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+  
+  .hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .btn.primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border: 2px solid var(--primary);
+  }
+  
+  .btn.primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn.secondary {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background-color: transparent;
+  }
+  
+  .btn.secondary:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-image {
+    flex-shrink: 0;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+  
+    .hero-text {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .hero-text p {
+      max-width: 100%;
+    }
+  
+    .hero-buttons {
+      justify-content: center;
+    }
+  
+    .hero-image {
+      margin-top: 2rem;
+    }
+  
+    .hero-image img {
+      max-width: 250px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-buttons {
+      flex-direction: column;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  }
+  
+  /* Additional global fixes */
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure all sections have proper width */
+  section {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* Add to your main.css */
+.btn.tertiary {
+    background-color: var(--accent);
+    color: var(--white);
+    border: 2px solid var(--accent);
+    cursor: pointer;
+  }
+  
+  .btn.tertiary:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Update the hero-buttons to handle the new button */
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    .hero-buttons {
+      flex-direction: column;
+    }
+    
+    .hero-buttons .btn {
+      width: 100%;
+    }
+  }
+
+  /* Add this to your main.css */
+.dark-mode {
+  --primary: #3498db;
+  --secondary: #ecf0f1;
+  --accent: #e74c3c;
+  --light: #2c3e50;
+  --dark: #ecf0f1;
+  --gray: #7f8c8d;
+  --white: #2c3e50;
+  --black: #ecf0f1;
+}
+
+.dark-mode body {
+  background-color: var(--light);
+  color: var(--black);
+}
+
+.dark-mode .portfolio-header {
+  background-color: var(--white);
+}
+
+.dark-mode .nav-links a,
+.dark-mode .nav-links button {
+  color: var(--black);
+}
+
+.dark-mode .nav-links a:hover,
+.dark-mode .nav-links a.active,
+.dark-mode .nav-links button:hover,
+.dark-mode .nav-links button.active {
+  color: var(--primary);
+}
+
+.dark-mode .section-title {
+  color: var(--secondary);
+}
+
+/* Add dark mode styles for other components as needed */
+.dark-mode .hero-section {
+  background-color: var(--light);
+  color: var(--black);
+}
+
+.dark-mode .hero-text h1,
+.dark-mode .hero-text h2 {
+  color: var(--secondary);
+}
